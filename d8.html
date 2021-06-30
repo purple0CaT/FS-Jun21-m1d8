@@ -102,6 +102,10 @@
       */
 
       const changeFooterText = function () {
+        const texts = ['Some text', 'Other text', 'Unknown text', 'SASKEEEE', 'NARUTOOOO']
+
+        let ind = Math.floor(Math.random() * texts.length)
+        document.querySelector('footer p').innerText = texts[ind]
         //
       };
 
@@ -164,7 +168,7 @@
       </div>
     </main>
 
-    <footer>
+    <footer onclick="changeFooterText()">
       <p>And this text is just for the exercise too!</p>
     </footer>
   
