@@ -26,8 +26,9 @@
       */
 
       const changePcontent = function () {
-        let divChild = document.querySelector("div p")
-        divChild.innerText = "Its changed!"
+        let divChild = document.querySelectorAll("div p")
+        for ( let pi of divChild){
+        pi.innerText = "Its changed!"}
       };
 
       /* EXERCISE 4
@@ -38,7 +39,7 @@
         let linkCh = document.querySelectorAll("a")
         console.log(linkCh)
         for ( let link of linkCh){
-        link.href= "https://www.google.com"}
+        link.href = "https://www.google.com"}
       };
 
       /* EXERCISE 5
@@ -46,7 +47,10 @@
        */
 
       const addToTheSecond = function (content) {
-        //
+        let secondList = document.getElementById("secondList")
+        let nemLi = document.createElement("li") 
+        nemLi.innerText = content
+        secondList.appendChild(nemLi)
       };
 
       /* EXERCISE 6
