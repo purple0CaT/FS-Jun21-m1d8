@@ -78,15 +78,23 @@
       */
 
       const paintItGreen = function () {
-        //
+        let allUL = document.querySelectorAll('main ul')
+        for( let ul of allUL){
+          ul.style.backgroundColor = "green"
+        }
+
       };
 
       /* EXERCISE 9
       Make the heading of the page change color every time the user clicks on it.
       */
-
       const makeItClickable = function () {
-        //
+        const colors = ['#ff5959', '#ffc259', '#59ffba', 'yellow', 'cyan', '#ff5983', '#e659ff', 'rgb(187, 0, 0)']
+        
+        let ind = Math.floor(Math.random() * colors.length)
+        headerCol = colors[ind]            
+        document.querySelector("header").style.backgroundColor=`${headerCol}`
+      
       };
 
       /* EXERCISE 10
@@ -125,7 +133,7 @@
   </head>
 
   <body>
-    <header>
+    <header onclick="makeItClickable()">
       <h1>This is the title of the page</h1>
       <h2>This is the subtitle of the page</h2>
     </header>
