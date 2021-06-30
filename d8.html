@@ -12,6 +12,11 @@
         document.title = newTitle
       };
 
+      document.getElementById("input-title").addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+          changeTitle(this.value)}
+        })
+
       /* EXERCISE 2
       Write a function for changing the class of the title of the page in "myHeading".
       */
@@ -21,7 +26,7 @@
 
         myTitle.classList.add("myHeading")
 };
-
+      document.querySelector('.header-c').addEventListener('click', addClassToTitle)
       /* EXERCISE 3
       Write a function for changing the text of only the p which are children of a div.
       */
@@ -31,6 +36,7 @@
         for ( let pi of divChild){
         pi.innerText = "Its changed!"}
       };
+      document.querySelector('.text-p').addEventListener('click', changePcontent)
 
       /* EXERCISE 4
       Write a function for changing the destination of every link to https://www.google.com
@@ -38,10 +44,10 @@
 
       const changeUrls = function () {
         let linkCh = document.querySelectorAll("a")
-        console.log(linkCh)
         for ( let link of linkCh){
         link.href = "https://www.google.com"}
       };
+      document.querySelector('.text-a').addEventListener('click', changeUrls)
 
       /* EXERCISE 5
       Write a function for adding a new item in the second list.
@@ -53,7 +59,10 @@
         nemLi.innerText = content
         secondList.appendChild(nemLi)
       };
-
+      document.getElementById("li-add").addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+          addToTheSecond(this.value)}
+        })
       /* EXERCISE 6
       Write a function for adding a second paragraph to the div.
       */
@@ -64,6 +73,10 @@
         newP.innerText = content
         secondParagaph.appendChild(newP)
       };
+      document.getElementById("par-add").addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+          addParagraph(this.value)}
+        })
 
       /* EXERCISE 7
       Write a function for making the first UL disappear.
@@ -73,6 +86,9 @@
         let dissUl = document.querySelector('main ul')
         dissUl.style.display = "none"
       };
+
+      document.querySelector('.disap-ul').addEventListener('click', firstUlDisappear)
+
 
       /* EXERCISE 8
       Write a function for making the background of every UL green.
@@ -134,6 +150,7 @@
       /* EXERCISE 13
       Use HTML5 tags to divide the content of the page in a more semantic way.
       */
+    
     }
     </script>
 
@@ -179,6 +196,21 @@
     <footer>
       <p>And this text is just for the exercise too!</p>
     </footer>
-  
+    <hr>
+    <section>
+      <input type="text" id="input-title" placeholder="Press Enter for Submit">
+      <br>
+      <button class="header-c">Change color</button>
+      <br>
+      <button class="text-p">Change p text</button>
+      <br>
+      <button class="text-a">Change a link</button>
+      <br>
+      <input type="text" id="li-add" placeholder="Press Enter for add li">
+      <br>
+      <input type="text" id="par-add" placeholder="Press Enter for add new paragraph">
+      <br>
+      <button class="disap-ul"> Ul disappear</button>
+    </section>
 
 </body></html>
