@@ -3,6 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
     <script>
+      window.onload=function(){
       /* EXERCISE 1
       Write a function for changing the title of the document in something else.
       */
@@ -114,7 +115,9 @@
       */
 
       const inputField = document.getElementById("input-field");
-      // ...
+      inputField.addEventListener('input', function () {
+            console.log(this.value)
+        })
 
       /* EXERCISE 12
       Create a new welcome alert message when the page successfully loads.
@@ -127,6 +130,7 @@
       /* EXERCISE 13
       Use HTML5 tags to divide the content of the page in a more semantic way.
       */
+    }
     </script>
 
     <style>
